@@ -1,0 +1,29 @@
+.navbar-wrapper {
+  display: flex;
+  background: black;
+  color: white;
+  width: 100%;
+  padding: 10px 20px;
+  justify-content: space-between;
+}
+
+.navbar-button-wrapper {
+  margin-right: 40px;
+}
+
+.navbar-button {
+  margin: 0 4px;
+  width: 120px;
+  padding: 3px;
+  border: none;
+  background: white;
+  color: brown;
+  border-radius: 3px;
+  font-weight: bold;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.navbar-button:hover {
+  background: lightcyan;
+}

@@ -1,0 +1,14 @@
+.prod-wrapper {
+  margin-left: 10px;
+  min-height: 600px;
+  background: #4f4f4f14;
+  width: 100%;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.prod-cards-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}

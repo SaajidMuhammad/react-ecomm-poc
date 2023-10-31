@@ -1,0 +1,27 @@
+.cats-wrapper {
+  height: 600px;
+  background: black;
+  color: white;
+  width: 220px;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.cats-header {
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+.cats {
+  font-size: 18px;
+  cursor: pointer;
+  text-transform: capitalize;
+}
+
+.cats:hover {
+  font-size: 18px;
+  cursor: pointer;
+  color: bisque;
+  border-bottom: 1px solid white;
+}

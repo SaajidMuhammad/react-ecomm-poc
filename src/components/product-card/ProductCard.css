@@ -1,0 +1,11 @@
+.prod-card-wrapper {
+  border: 1px solid black;
+  height: 280px;
+  width: 160px;
+  margin: 10px;
+}
+
+.prod-card-image {
+  height: 120px;
+  width: 120px;
+}
