@@ -1,7 +1,10 @@
 import React from "react";
 import "./Categories.css";
+import { useAppContext } from "../../contexts/AppContext";
 
-const Categories = ({ allCategories }) => {
+const Categories = () => {
+  const { allCategories } = useAppContext();
+
   return (
     <div className="cats-wrapper">
       <div className="cats-header">Categories</div>

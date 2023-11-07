@@ -1,50 +1,25 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Navbar from "./components/navbar/Navbar";
 import "./style.css";
-import Banner from "./components/banner/Banner";
-import Categories from "./components/categories/Categories";
-import ProductWrapper from "./components/product-wrapper/ProductWrapper";
-import { BASE_URL } from "./config";
+import { AppProvider } from "./contexts/AppContext";
+import { HashRouter, Route, Routes } from "react-router-dom";
+import HomePage from "./pages/HomePage";
+import SingleProductPage from "./pages/SingleProductPage";
 
 const App = () => {
-  const [allCategories, setAllCategories] = useState([]);
-  const [allProducts, setAllProducts] = useState([]);
-
-  useEffect(() => {
-    getCategories();
-    getProducts();
-  }, []);
-
-  const getCategories = async () => {
-    try {
-      const res = await fetch(BASE_URL + "products/categories");
-      const catDatas = await res.json();
-      setAllCategories(catDatas);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  const getProducts = async () => {
-    try {
-      const res = await fetch(BASE_URL + "products");
-      const prodData = await res.json();
-      console.log(prodData);
-      setAllProducts(prodData);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
   return (
-    <div>
-      <Navbar />
-      <Banner />
-      <div className="main-wrapper">
-        <Categories allCategories={allCategories} />
-        <ProductWrapper allProducts={allProducts} />
-      </div>
-    </div>
+    <AppProvider>
+      <HashRouter>
+        <div>
+          <Navbar />
+
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/product/:productId" element={<SingleProductPage />} />
+          </Routes>
+        </div>
+      </HashRouter>
+    </AppProvider>
   );
 };
 export default App;
